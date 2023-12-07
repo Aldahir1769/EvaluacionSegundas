@@ -3,12 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'start',
     pathMatch: 'full'
   },
   {
@@ -22,14 +18,6 @@ const routes: Routes = [
   {
     path: 'inicio-de-sesion',
     loadChildren: () => import('./inicio-de-sesion/inicio-de-sesion.module').then( m => m.InicioDeSesionPageModule)
-  },
-  {
-    path: 'user-library',
-    loadChildren: () => import('./user-library/user-library.module').then( m => m.UserLibraryPageModule)
-  },
-  {
-    path: 'buscar',
-    loadChildren: () => import('./buscar/buscar.module').then( m => m.BuscarPageModule)
   },
   {
     path: 'crear-playlist',
