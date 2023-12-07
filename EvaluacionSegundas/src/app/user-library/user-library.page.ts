@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-library',
@@ -10,6 +11,17 @@ export class UserLibraryPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.getUser();
   }
 
+  user:any
+
+  getUser() {
+    data.usuarios.forEach(usuario => {
+      if (usuario.correo == data.activo)
+        this.user = usuario;
+    })
+
+    console.log(this.user);
+  }
 }

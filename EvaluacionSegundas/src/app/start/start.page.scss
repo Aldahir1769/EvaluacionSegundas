@@ -1,0 +1,31 @@
+ion-content {
+  --background: #131313 url('../img/fondo-start.jpeg') 0px 0px/contain no-repeat;
+}
+
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  color: #fff;
+}
+
+ion-button {
+  --color: #000;
+}
+
+#inicio-sesion {
+  --background: #40cf5a;
+  --background-activated: #35b14c;
+}
+
+#registro {
+  --background: #fff;
+  --background-activated: #cfcfcf;
+}
