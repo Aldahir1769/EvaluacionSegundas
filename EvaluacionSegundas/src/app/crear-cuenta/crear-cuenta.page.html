@@ -8,5 +8,56 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <h1>crear cuenta</h1>
+  <form [formGroup]="form" novalidate (ngSubmit)="next()">
+    <ion-grid fixed>
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-label position="stacked">
+            <span style="color: #fff; font-size: large;">
+              <b>
+                ¿Cuál es tu correo?
+              </b>
+            </span>
+          </ion-label>
+          <ion-input formControlName="correo" type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-label position="stacked">
+            <span style="color: #fff; font-size: large;">
+              <b>
+                Elije tu constraseña
+              </b>
+            </span>
+          </ion-label>
+          <ion-input formControlName="contra" type="password"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-label position="stacked">
+            <span style="color: #fff; font-size: large;">
+              <b>
+                ¿Cuál es tu nombre?
+              </b>
+            </span>
+          </ion-label>
+          <ion-input formControlName="nombre" type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding ion-justify-content-center">
+        <div style="margin: auto;">
+          <ion-col>
+            <br><br>
+            <ion-button shape="round" type="submit">
+              <b>
+                <i>Next</i>
+              </b>
+            </ion-button>
+          </ion-col>
+        </div>
+      </ion-row>      
+    </ion-grid>
+  </form>
 </ion-content>

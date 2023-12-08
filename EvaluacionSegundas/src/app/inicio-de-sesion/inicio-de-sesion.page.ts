@@ -41,6 +41,7 @@ export class InicioDeSesionPage implements OnInit {
     if (bandera)
       this.mensaje("Error: Usuario o contraseña incorrectos");
   }
+  
   async mensaje(msg: any) {
     const alert = await this.alertController.create({
       message: msg,

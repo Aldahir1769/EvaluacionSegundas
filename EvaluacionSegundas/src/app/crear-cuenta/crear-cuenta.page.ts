@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { data } from 'src/environments/environment';
 
 @Component({
   selector: 'app-crear-cuenta',
@@ -7,9 +11,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearCuentaPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private alertController: AlertController
+  ) { }
 
   ngOnInit() {
   }
 
+  form = this.formBuilder.group({
+    correo: ['', [Validators.email, Validators.required]],
+    contra: ['', [Validators.required]],
+    nombre: ['', [Validators.required]]
+  })
+
+  next(){
+    if (this.form.value.correo && this.form.value.contra && this.form.value.nombre){
+      let usuario = {
+        correo: this.form.value.correo,
+        contra: this.form.value.contra,
+        nombre: this.form.value.nombre,
+        playlists: []
+      }
+
+      data.usuarios.push(usuario);
+      data.activo = usuario.correo;
+      this.mensaje("Usuario creado, bienvenido");
+      this.router.navigate(['/tabs/user-library']);
+    } else 
+      this.mensaje("Error no se ha creado el usuario");
+  }
+  
+  async mensaje(msg: any) {
+    const alert = await this.alertController.create({
+      message: msg,
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
 }
