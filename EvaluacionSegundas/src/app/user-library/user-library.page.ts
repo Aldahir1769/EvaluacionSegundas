@@ -11,17 +11,21 @@ export class UserLibraryPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.getUser();
+    this.getUsuario();
   }
 
-  user:any
-
-  getUser() {
+  cantidadPlaylists:number = 0;
+  
+  usuarioActivo:any = {
+    playlists:[]
+  };
+  
+  getUsuario() {
     data.usuarios.forEach(usuario => {
-      if (usuario.correo == data.activo)
-        this.user = usuario;
-    })
-
-    console.log(this.user);
+      if (usuario.correo == data.activo){
+        this.usuarioActivo = usuario;
+        this.cantidadPlaylists = usuario.playlists.length;
+      }
+    });
   }
 }

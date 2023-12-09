@@ -1,7 +1,3 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
   production: false
 };
@@ -15,15 +11,18 @@ export var data = {
       playlists: [
         {
           nombre: "Shazam",
-          canciones: 0
+          canciones: 0,
+          imagen: 'album-1'
         },
         {
           nombre: "Roadtrip",
-          canciones: 0
+          canciones: 0,
+          imagen: 'album-2'
         },
         {
           nombre: "Study",
-          canciones: 0
+          canciones: 0,
+          imagen: 'album-3'
         }
       ]
     }

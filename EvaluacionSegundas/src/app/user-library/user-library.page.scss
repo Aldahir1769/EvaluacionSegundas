@@ -1,0 +1,34 @@
+ion-content {
+  --background: url('../img/fondo-usuario.jpeg') 0px 0px/contain no-repeat;
+}
+
+#info ion-col {
+  text-align: center;
+}
+
+ion-button {
+  --color: #fff;
+  --background: #474646;
+  --background-activated: #3a3939;
+}
+
+#canciones {
+  font-size: small;
+}
+
+ion-toolbar {
+  --background: rgba(0,0,0,0);
+}
+
+div {
+  padding-left: 10px;
+}
+
+#add {
+  font-size: larger;
+}
+
+#crearPlaylist {
+  color: #40cf5a;
+}
+

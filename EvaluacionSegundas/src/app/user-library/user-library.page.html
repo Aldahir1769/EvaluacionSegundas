@@ -7,9 +7,83 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">User-Library</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid fixed id="info">
+    <ion-row>
+      <ion-col>
+        <img src="./assets/img/foto-perfil.png" alt="Foto-Perfil" width="25%">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{usuarioActivo.nombre}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button shape="round" type="submit">
+          <b>
+            Cambiar foto
+          </b>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{cantidadPlaylists}} <br>
+        PLAYLISTS
+      </ion-col>
+      <ion-col>
+        58 <br>
+        SEGUIDORES
+      </ion-col>
+      <ion-col>
+        43 <br>
+        SIGUIENDO
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <span>
+          <i>Playlists</i>
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list lines="none">
+          <ion-item *ngFor="let playlist of usuarioActivo.playlists">
+            <ng-container *ngIf="playlist.imagen == ''; else elseTemplate">
+              <ion-icon slot="start" name="musical-notes-outline"></ion-icon>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <img src="./assets/img/{{playlist.imagen}}.png" width="12%">
+            </ng-template>
+            
+            <div>
+              <ion-label>
+                <b>
+                  {{playlist.nombre}} <br>
+                </b>
+                <span id="canciones">
+                  {{playlist.canciones}} canciones
+                </span>
+              </ion-label>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row id="crearPlaylist" class="ion-padding ion-align-items-center">
+      <ion-col size="4">
+        <ion-label routerLink="/crear-playlist">
+          <i>Crear playlist </i>
+        </ion-label>
+      </ion-col>
+      <ion-col class="ion-no-padding">
+        <ion-icon name="add" size="large" routerLink="/crear-playlist"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
