@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { data } from 'src/environments/environment';
+import { data } from '../app.component';
 
 @Component({
   selector: 'app-crear-cuenta',

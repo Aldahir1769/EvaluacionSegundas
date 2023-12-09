@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from 'src/environments/environment';
+import { data } from '../app.component';
 
 @Component({
   selector: 'app-user-library',
