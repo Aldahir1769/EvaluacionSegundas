@@ -7,10 +7,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Crear-Playlist</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="form" novalidate (ngSubmit)="crear()">
+    <ion-grid fixed>
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-label position="stacked">
+            <span style="color: #fff; font-size: large;">
+              <b>
+                Nombre de la playlist
+              </b>
+            </span>
+          </ion-label>
+          <ion-input formControlName="nombre" type="text" [clearOnEdit]="true" ></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding ion-justify-content-center">
+        <div style="margin: auto;">
+          <ion-col>
+            <ion-button shape="round" type="submit">
+              <i>Crear</i>
+            </ion-button>
+          </ion-col>
+        </div>
+      </ion-row>      
+    </ion-grid>
+  </form>
 </ion-content>

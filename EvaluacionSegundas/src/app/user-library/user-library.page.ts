@@ -14,7 +14,9 @@ export class UserLibraryPage implements OnInit {
     this.getUsuario();
   }
 
-  cantidadPlaylists:number = 0;
+  ionViewDidEnter() {
+    this.ngOnInit();
+  }
   
   usuarioActivo:any = {
     playlists:[]
@@ -24,7 +26,6 @@ export class UserLibraryPage implements OnInit {
     data.usuarios.forEach(usuario => {
       if (usuario.correo == data.activo){
         this.usuarioActivo = usuario;
-        this.cantidadPlaylists = usuario.playlists.length;
       }
     });
   }

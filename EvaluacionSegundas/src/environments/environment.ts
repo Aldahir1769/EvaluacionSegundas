@@ -24,7 +24,8 @@ export var data = {
           canciones: 0,
           imagen: 'album-3'
         }
-      ]
+      ],
+      cantidadPlaylists: 3
     }
   ],
   activo: ''

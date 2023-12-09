@@ -28,17 +28,29 @@ export class CrearCuentaPage implements OnInit {
 
   next(){
     if (this.form.value.correo && this.form.value.contra && this.form.value.nombre){
+      let bandera = true;
+
       let usuario = {
         correo: this.form.value.correo,
         contra: this.form.value.contra,
         nombre: this.form.value.nombre,
-        playlists: []
-      }
+        playlists: [],
+        cantidadPlaylists: 0
+      };
 
-      data.usuarios.push(usuario);
-      data.activo = usuario.correo;
-      this.mensaje("Usuario creado, bienvenido");
-      this.router.navigate(['/tabs/user-library']);
+      data.usuarios.forEach(usr => {
+        if(usuario.correo == usr.correo)
+          bandera = false
+      });
+
+      if(bandera) {
+        data.usuarios.push(usuario);
+        data.activo = usuario.correo;
+        this.mensaje("Usuario creado, bienvenido");
+        this.router.navigate(['/tabs/user-library']);
+      } else
+        this.mensaje("Error ya existe un usuario con ese correo"); 
+
     } else 
       this.mensaje("Error no se ha creado el usuario");
   }
