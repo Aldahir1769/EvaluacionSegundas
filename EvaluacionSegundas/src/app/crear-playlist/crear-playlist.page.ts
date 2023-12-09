@@ -53,8 +53,12 @@ export class CrearPlaylistPage implements OnInit {
 
       if (bandera) {
         data.usuarios.forEach((usuario:any) => {
-          if (usuario.correo == data.activo)
+          if (usuario.correo == data.activo){
             usuario.cantidadPlaylists++;
+            
+            if (usuario.cantidadPlaylists < 4)
+              playlist.imagen = 'album-' + usuario.cantidadPlaylists
+          }
         });
 
         this.usuarioActivo.playlists.push(playlist);

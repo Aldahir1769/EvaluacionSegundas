@@ -1,13 +1,27 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
+
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private platform: Platform
+  ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      // Forzar el modo oscuro
+      document.body.classList.toggle('dark', true);
+    });
+  }
 }
+
 export var data = {
   usuarios: [
     {
