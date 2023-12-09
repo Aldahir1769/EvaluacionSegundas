@@ -38,7 +38,7 @@ export class CrearCuentaPage implements OnInit {
         cantidadPlaylists: 0
       };
 
-      data.usuarios.forEach(usr => {
+      data.usuarios.forEach((usr:any) => {
         if(usuario.correo == usr.correo)
           bandera = false
       });

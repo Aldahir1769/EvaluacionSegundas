@@ -26,7 +26,7 @@ export class CrearPlaylistPage implements OnInit {
   };
   
   getUsuario() {
-    data.usuarios.forEach(usuario => {
+    data.usuarios.forEach((usuario:any) => {
       if (usuario.correo == data.activo)
         this.usuarioActivo = usuario;
     });
@@ -52,7 +52,7 @@ export class CrearPlaylistPage implements OnInit {
       });
 
       if (bandera) {
-        data.usuarios.forEach(usuario => {
+        data.usuarios.forEach((usuario:any) => {
           if (usuario.correo == data.activo)
             usuario.cantidadPlaylists++;
         });

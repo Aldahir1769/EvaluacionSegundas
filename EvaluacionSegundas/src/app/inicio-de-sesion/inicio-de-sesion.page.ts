@@ -29,8 +29,8 @@ export class InicioDeSesionPage implements OnInit {
     let formValue = this.form.value;
     let bandera = true;
 
-    data.usuarios.forEach(usuario => {
-      if (usuario.correo === formValue.correo && usuario.contra === formValue.contra) {
+    data.usuarios.forEach((usuario:any) => {
+      if (usuario.correo === formValue.correo && usuario.contra === formValue.contra && formValue.correo) {
         this.mensaje("Bienvenido");
         data.activo = formValue.correo
         this.router.navigate(['/tabs/user-library']);

@@ -23,7 +23,7 @@ export class UserLibraryPage implements OnInit {
   };
   
   getUsuario() {
-    data.usuarios.forEach(usuario => {
+    data.usuarios.forEach((usuario:any) => {
       if (usuario.correo == data.activo){
         this.usuarioActivo = usuario;
       }
